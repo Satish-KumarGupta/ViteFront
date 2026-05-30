@@ -10,7 +10,7 @@ import { getProducts } from "../services/productService";
 import { purchaseProduct } from "../services/purchaseService";
 import toast from "react-hot-toast";
 
-function Home() {
+const Home=()=> {
   const [products, setProducts] = useState([]);
 
   const [showLogin, setShowLogin] = useState(false);
