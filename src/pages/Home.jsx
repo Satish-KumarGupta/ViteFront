@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import LoginModal from "../components/LoginModal";
-import SignupModal from "../components/SignupModal";
+import SignUpModal from "../components/SignUpModal";
 import ProductCard from "../components/ProductCard";
 import OrderModal from "../components/OrderModel";
 
@@ -72,7 +72,7 @@ const Home=()=> {
       {/* Modals */}
       {showLogin && <LoginModal closeModal={() => setShowLogin(false)} />}
 
-      {showSignup && <SignupModal closeModal={() => setShowSignup(false)} />}
+      {showSignup && <SignUpModal closeModal={() => setShowSignup(false)} />}
       {showOrders && <OrderModal closeModal={() => setShowOrders(false)} />}
 
       {/* Product List */}
