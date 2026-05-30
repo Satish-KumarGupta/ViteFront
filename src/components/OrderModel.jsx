@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { getMyOrders } from "../services/purchaseService";
 
-function OrderModal({ closeModal }) {
+const OrderModal=({ closeModal })=> {
   const [orders, setOrders] = useState([]);
 
   const [loading, setLoading] = useState(false);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { signupUser } from "../services/authService";
 import toast from "react-hot-toast";
-function SignupModal({ closeModal }) {
+const SignupModal = ({ closeModal }) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -101,6 +101,6 @@ function SignupModal({ closeModal }) {
       </div>
     </div>
   );
-}
+};
 
 export default SignupModal;

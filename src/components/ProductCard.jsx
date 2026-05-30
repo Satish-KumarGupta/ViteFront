@@ -1,4 +1,4 @@
-function ProductCard({ product, onPurchase }) {
+const ProductCard=({ product, onPurchase })=> {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
       <img

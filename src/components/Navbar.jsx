@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Navbar({ onLogin, onSignup, onOrders }) {
+const Navbar=({ onLogin, onSignup, onOrders })=> {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loginUser } from "../services/authService";
 
-function LoginModal({ closeModal }) {
+const LoginModal=({ closeModal })=> {
   const [form, setForm] = useState({
     email: "",
     password: "",
