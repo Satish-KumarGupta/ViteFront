@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../App";
 import Navbar from "../components/Navbar";
 import LoginModal from "../components/LoginModal";
 import SignUpModal from "../components/SignUpModal";
@@ -10,7 +10,11 @@ import { getProducts } from "../services/productService";
 import { purchaseProduct } from "../services/purchaseService";
 import toast from "react-hot-toast";
 
-const Home=()=> {
+const Home = () => {
+  const { user } = useContext(ThemeContext);
+console.log('====================================');
+console.log(user);
+console.log('====================================');
   const [products, setProducts] = useState([]);
 
   const [showLogin, setShowLogin] = useState(false);
@@ -78,13 +82,13 @@ const Home=()=> {
       {/* Product List */}
       <div className="max-w-7xl mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Products</h1>
-
+        {user?.email}
         {loading ? (
           <h2>Loading...</h2>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {console.log(products)}
-
+            
             {products?.map((product) => (
               <ProductCard
                 key={product._id}
@@ -97,6 +101,6 @@ const Home=()=> {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

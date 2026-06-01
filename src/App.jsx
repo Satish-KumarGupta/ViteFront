@@ -1,13 +1,23 @@
+import { createContext, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
 
-function App() {
+export const ThemeContext = createContext();
+const App = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   return (
-    <>
-      <Toaster position="top-right" />
-      <Home />;
-    </>
+    <ThemeContext.Provider
+      value={{
+        user,
+        setUser,
+      }}
+    >
+      <>
+        <Toaster position="top-right" />
+        <Home />;
+      </>
+    </ThemeContext.Provider>
   );
-}
+};
 
 export default App;
